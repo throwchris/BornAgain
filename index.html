@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>BornAgain</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+<script src="https://kit.fontawesome.com/d1a6249b79.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+.mySlides {display:none;}
+</style>
+</head>
+
+<body>
+    <audio id="myAudio" src="Fulfill.mp3" preload="auto">
+    </audio>
+
+<h2 class="w3-center w3-container">  <a><i class=" w3-btn w3-bar-item w3-margin-center w3-right w3-text-red material-icons" style="font-size:36px" onClick="togglePlay()">headset</i></a></h2>
+
+<div class="w3-content w3-section" style="max-width:2000px">
+  <img class="mySlides" src="ba1.jpg" style="width:100%">
+  <img class="mySlides" src="ba2.jpg" style="width:100%">
+  <img class="mySlides" src="ba3.jpg" style="width:100%">
+  <img class="mySlides" src="ba4.jpg" style="width:100%">
+  <img class="mySlides" src="ba5.jpg" style="width:100%">
+  <img class="mySlides" src="ba6.jpg" style="width:100%">
+  <img class="mySlides" src="ba7.jpg" style="width:100%">
+  <img class="mySlides" src="ba8.jpg" style="width:100%">
+  <img class="mySlides" src="ba9.jpg" style="width:100%">
+  <img class="mySlides" src="ba10.jpg" style="width:100%">
+  <img class="mySlides" src="ba11.jpg" style="width:100%">
+  <img class="mySlides" src="ba12.jpg" style="width:100%">
+  <img class="mySlides" src="ba13.jpg" style="width:100%">
+  <img class="mySlides" src="ba14.jpg" style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 15000); // Change image every 15 seconds
+}
+
+var myAudio = document.getElementById("myAudio");
+var isPlaying = false;
+
+function togglePlay() {
+  isPlaying ? myAudio.pause() : myAudio.play();
+};
+
+myAudio.onplaying = function() {
+  isPlaying = true;
+};
+myAudio.onpause = function() {
+  isPlaying = false;
+};
+</script>
+
+</body>
+</html>
